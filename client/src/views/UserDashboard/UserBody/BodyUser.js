@@ -36,10 +36,11 @@ class BodyUser extends Component {
 
     return (
       <Query query={USER_QUERY}>
-      {({ loading, error, data }) => {
+      {
+        ({ loading, error, data }) => {
         if (error) return 'error';
         if (loading) return 'loading';
-        return (
+        return (data.getUsers.map(user =>
           <Fragment>
           <div>
             <GridContainer gridsmallpadding>
@@ -63,7 +64,7 @@ class BodyUser extends Component {
                           </Tooltip>
                         </span>
                         <span className={classes.spanContents}>
-                          adid value
+                          {user.adid}
                         </span>
                       </li>
                       <li className={classes.liUserContents}>
@@ -76,7 +77,7 @@ class BodyUser extends Component {
                           </Tooltip>
                         </span>
                         <span className={classes.spanContents}>
-                          gender value
+                          {user.gender}
                         </span>
                       </li>
                     </ul>
@@ -94,7 +95,7 @@ class BodyUser extends Component {
                           </Tooltip>
                         </span>
                         <span className={classes.spanContents}>
-                          adid value
+                          {user.age}
                         </span>
                       </li>
                       <li className={classes.liUserContents}>
@@ -107,7 +108,7 @@ class BodyUser extends Component {
                           </Tooltip>
                         </span>
                         <span className={classes.spanContents}>
-                          gender value
+                          {user.job}
                         </span>
                       </li>
                     </ul>
@@ -118,7 +119,7 @@ class BodyUser extends Component {
             </GridContainer>
         </div>
         </Fragment>
-        )
+        ))
         }}
       </Query>
       )

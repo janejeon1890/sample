@@ -24,7 +24,7 @@ function UserFooter(props) {
 
   return (
     <div className={classes.root}>
-    데이터응용분석팀
+    Team
     </div>
   );
 }
