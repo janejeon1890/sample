@@ -18,7 +18,7 @@ class App extends Component {
       <ApolloProvider client={client}>
         <Router>
           <Switch>
-            <Route exact={true} path="/" component={UserDashboard}/>
+            <Route exact={true} path="/user" component={UserDashboard}/>
             <Route exact={true} path="/location" component={LocationDashboard}/>
           </Switch>
         </Router>
